@@ -1,0 +1,36 @@
+{
+  "name": "backend-express-escolar",
+  "version": "1.0.0",
+  "description": "Construcción de una API REST con express.js y postgresql",
+  "main": "index.js",
+  "scripts": {
+    "server": "clear && nodemon index.js",
+    "start": "node index.js",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darwin073100/backend-express-escolar.git"
+  },
+  "keywords": [
+    "javascript",
+    "expressjs",
+    "postgresql"
+  ],
+  "author": "Edwin Garcia Quiterio <edwinegq@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Darwin073100/backend-express-escolar/issues"
+  },
+  "homepage": "https://github.com/Darwin073100/backend-express-escolar#readme",
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
