@@ -5,7 +5,7 @@ const {
   createClassSchema,
   upDateClassSchema,
   getClassSchema
-} = require('../schema/class-schema');
+} = require('../schemas/class-schema');
 
 const router = express.Router();
 const service = new ClassService();

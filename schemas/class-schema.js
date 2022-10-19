@@ -3,7 +3,7 @@ const Joi = require('joi');
 // Creacion de los campos o atributos con sus ipos de datos
 const id = Joi.number().integer();
 const name = Joi.string();
-const credits = Joi.number().integer();
+const credits = Joi.number().integer().min(4).max(10);
 
 // Creacion de la restriccion para crear una nueva class
 const createClassSchema = Joi.object({
