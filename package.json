@@ -4,7 +4,7 @@
   "description": "Construcción de una API REST con express.js y postgresql",
   "main": "index.js",
   "scripts": {
-    "server": "clear && nodemon index.js",
+    "server": "nodemon index.js",
     "start": "node index.js",
     "lint": "eslint",
     "migrations:generate": "sequelize-cli migration:generate --name",

@@ -4,13 +4,20 @@ class ClassService{
 
   // metodo para consultar las class
   async findAll(){
-    const data = await models.Class.findAll();
-    return data;
+    const classes = await models.Class.findAll();
+    return classes;
+  }
+
+  async addItem(data){
+    const newItem = await models.ClassStudent.create(data);
+    return newItem;
   }
 
   // metodo para consultar una class
   async findOne(id){
-    const clas = await models.Class.findByPk(id);
+    const clas = await models.Class.findByPk(id, {
+      include: ['items']
+    });
     if(!clas){
       throw boom.notFound('Class not found');
     }
