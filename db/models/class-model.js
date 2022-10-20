@@ -2,7 +2,7 @@ const { Model, DataTypes, Sequelize } = require('sequelize');
 
 const CLASS_TABLE = 'class';
 
-const ClassSchema = {
+const ClassModel = {
   id: {
     allowNull: false,
     autoIncrement: true,
@@ -21,6 +21,16 @@ const ClassSchema = {
 };
 
 class Class extends Model{
+
+  static associate(models){
+    this.belongsToMany(models.Student,{
+      as: 'items',
+      through: models.ClassStudent,
+      foreignKey: 'classId',
+      otherKey: 'studentId'
+    });
+  }
+
   static config(sequelize){
     return{
       sequelize,
@@ -31,4 +41,8 @@ class Class extends Model{
   }
 }
 
-module.exports  = { CLASS_TABLE, ClassSchema, Class };
+module.exports  = {
+  CLASS_TABLE,
+  ClassModel,
+  Class
+};
