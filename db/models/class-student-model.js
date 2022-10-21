@@ -3,7 +3,7 @@ const { Model, DataTypes, Sequelize } = require('sequelize');
 const { CLASS_TABLE } = require('./class-model');
 const { STUDENT_TABLE, Student } = require('./student-model');
 
-const CLASS_STUDENT_TABLE = 'class_student';
+const CLASS_STUDENT_TABLE = 'classes_students';
 
 const ClassStudentModel = {
   id: {

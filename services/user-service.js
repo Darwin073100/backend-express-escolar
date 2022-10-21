@@ -5,16 +5,12 @@ class UserService{
   constructor(){}
 
   async findAll(){
-    const users = await models.User.findAll({
-      include: ['student']
-    });
+    const users = await models.User.findAll();
     return users;
   }
 
   async findOne(id){
-    const user = await models.User.findByPk(id,{
-      include: ['student']
-    });
+    const user = await models.User.findByPk(id);
 
     if(!user){
       throw boom.notFound('User not found');

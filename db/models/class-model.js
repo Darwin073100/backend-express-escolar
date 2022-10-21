@@ -1,6 +1,6 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 
-const CLASS_TABLE = 'class';
+const CLASS_TABLE = 'classes';
 
 const ClassModel = {
   id: {

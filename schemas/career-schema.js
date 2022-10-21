@@ -6,7 +6,6 @@ const ages = Joi.number().integer();
 const code = Joi.number().integer();
 
 const createCareerSchema = Joi.object({
-  id: id.required(),
   name: name.required(),
   ages: ages.required(),
   code: code.required()

@@ -5,16 +5,12 @@ class CareerService{
   constructor(){}
 
   async findAll(){
-    const careers = await models.Career.findAll({
-      include: ['student']
-    });
+    const careers = await models.Career.findAll();
     return careers;
   }
 
   async findOne(id){
-    const career = await models.Career.findByPk(id,{
-      include: ['student']
-    });
+    const career = await models.Career.findByPk(id);
 
     if(!career){
       throw boom.notFound('Career not found');

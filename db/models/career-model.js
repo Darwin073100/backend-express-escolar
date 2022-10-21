@@ -1,6 +1,6 @@
-const { Model, DataTypes, Sequelize } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
-const CAREER_TABLE = 'career';
+const CAREER_TABLE = 'careers';
 
 const CareerModel = {
   id: {
@@ -26,10 +26,10 @@ const CareerModel = {
 class Career extends Model{
 
   static associate(models){
-    this.hasMany(models.User,{
-      as: 'user',
-      foreignKey: 'userId'
-    })
+    this.hasMany(models.Student,{
+      as: 'student',
+      foreignKey: 'careerId'
+    });
   }
 
   static config(sequelize){
@@ -37,7 +37,8 @@ class Career extends Model{
       sequelize,
       tableName: CAREER_TABLE,
       modelName: 'Career',
-      timestamp: false
+      timestamp: true,
+      underscored: true,
     }
   }
 }

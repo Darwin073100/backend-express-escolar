@@ -1,7 +1,7 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const { USER_TABLE } = require('./user-model');
 const { CAREER_TABLE } = require('./career-model');
-const STUDENT_TABLE = 'student';
+const STUDENT_TABLE = 'students';
 
 const StudentModel = {
   id: {
@@ -15,6 +15,7 @@ const StudentModel = {
     type: DataTypes.STRING,
   },
   surName: {
+    field: 'sur_name',
     allowNull: false,
     type: DataTypes.STRING,
   },
@@ -35,9 +36,9 @@ const StudentModel = {
     type: DataTypes.CHAR,
   },
   careerId: {
+    field: 'career_id',
     allowNull: false,
     type: DataTypes.INTEGER,
-    field: 'career_id',
     referemces: {
       model: CAREER_TABLE,
       key: 'id'
