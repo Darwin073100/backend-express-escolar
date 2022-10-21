@@ -6,7 +6,6 @@ const userName = Joi.string();
 const email = Joi.string().email();
 
 const createUserSchema = Joi.object({
-  id: id.required(),
   password: password.required(),
   userName: userName.required(),
   email: email.required()

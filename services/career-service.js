@@ -1,5 +1,5 @@
 const boom = require('@hapi/boom');
-const { models }= require('../libs/sequelize');
+const { models } = require('../libs/sequelize');
 
 class CareerService{
   constructor(){}
@@ -10,8 +10,9 @@ class CareerService{
   }
 
   async findOne(id){
-    const career = await models.Career.findByPk(id);
-
+    const career = await models.Career.findByPk(id,{
+      include: ['students']
+    });
     if(!career){
       throw boom.notFound('Career not found');
     }

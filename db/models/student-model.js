@@ -33,7 +33,7 @@ const StudentModel = {
   },
   sex: {
     allowNull: false,
-    type: DataTypes.CHAR,
+    type: DataTypes.STRING,
   },
   createdAt: {
     allowNull: false,

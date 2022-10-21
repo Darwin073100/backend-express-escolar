@@ -39,7 +39,7 @@ class Career extends Model{
 
   static associate(models){
     this.hasMany(models.Student,{
-      as: 'student',
+      as: 'students',
       foreignKey: 'careerId'
     });
   }

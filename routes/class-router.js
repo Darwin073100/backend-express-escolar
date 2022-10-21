@@ -4,7 +4,8 @@ const validatorHandler = require('../middlewares/validator-handler');
 const {
   createClassSchema,
   upDateClassSchema,
-  getClassSchema
+  getClassSchema,
+  addItemsSchema
 } = require('../schemas/class-schema');
 
 const router = express.Router();
@@ -35,6 +36,19 @@ router.post('/',
       const body = req.body;
       const newClass = await service.create(body);
       res.status(201).json(newClass);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+router.post('/item',
+  validatorHandler(addItemsSchema, 'body'),
+  async(req, res, next)=>{
+    try {
+      const body = req.body;
+      const newItem = await service.addItem(body);
+      res.status(201).json(newItem);
     } catch (error) {
       next(error);
     }

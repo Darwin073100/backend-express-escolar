@@ -10,8 +10,9 @@ class StudentService{
   }
 
   async findOne(id){
-    const student = await models.Student.findByPk(id);
-
+    const student = await models.Student.findByPk(id,{
+      include:['user','career','class']
+    });
     if(!student){
       throw boom.notFound('Student not found');
     }

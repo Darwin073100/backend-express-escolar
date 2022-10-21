@@ -15,21 +15,14 @@ class ClassService{
 
   // metodo para consultar una class
   async findOne(id){
-    const clas = await models.Class.findByPk(id);
+    const clas = await models.Class.findByPk(id, {
+      include: ['items']
+    });
     if(!clas){
       throw boom.notFound('Class not found');
     }
     return clas;
   }
-  // async findOne(id){
-  //   const clas = await models.Class.findByPk(id, {
-  //     include: ['items']
-  //   });
-  //   if(!clas){
-  //     throw boom.notFound('Class not found');
-  //   }
-  //   return clas;
-  // }
 
   // metodo para crear class
   async create(data){
