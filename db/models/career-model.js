@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 
 const CAREER_TABLE = 'careers';
 
@@ -20,7 +20,19 @@ const CareerModel = {
   code: {
     allowNull: false,
     type: DataTypes.SMALLINT,
-  }
+  },
+  createdAt: {
+    allowNull: false,
+    type: DataTypes.DATE,
+    field: 'created_at',
+    defaultValue: Sequelize.NOW,
+  },
+  updatedAt: {
+    allowNull: false,
+    type: DataTypes.DATE,
+    field: 'updated_at',
+    defaultValue: Sequelize.NOW,
+  },
 }
 
 class Career extends Model{
@@ -37,8 +49,7 @@ class Career extends Model{
       sequelize,
       tableName: CAREER_TABLE,
       modelName: 'Career',
-      timestamp: true,
-      underscored: true,
+      timestamp: false,
     }
   }
 }
